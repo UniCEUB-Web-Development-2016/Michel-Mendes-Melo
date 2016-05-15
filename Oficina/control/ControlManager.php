@@ -30,18 +30,21 @@ class ControlManager
 	{
 		switch($request->get_method())
 		{
-			case "GET":
-			           break;
+			case "GET": 
+			    return $this->resourceController->searchResource($request);
+			        break;
 			
 			case "POST": 
-			   return $this->resourceController->createResource($request);
-			    break;
+			    return $this->resourceController->createResource($request);
+					break;
 
 			case "PUT":
-			 			break;
+				return $this->resourceController->updateResource($request);
+			 		break;
 
 			case "DELETE": 
-						break;
+				return $this->resourceController->deleteResource($request);	
+					break;
 
 			default:
 

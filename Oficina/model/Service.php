@@ -8,7 +8,7 @@
 		
 		public function __construct ($name, $employee, $value){
 			$this->setName($name);
-			$this->setEmployee($employee)
+			$this->setEmployee($employee);
 			$this->setValue($value);
 		}
 		
@@ -19,7 +19,7 @@
 		}
 		
 		public function setEmployee ($employee){
-			$this->employee = $employee
+			$this->employee = $employee;
 		}
 		
 		public function setValue ($value){

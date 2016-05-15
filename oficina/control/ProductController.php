@@ -1,37 +1,35 @@
 <?php
 
 include_once "model/Request.php";
-include_once "model/User.php";
+include_once "model/Product.php";
 include_once "database/DatabaseConnector.php";
 
-class UserController
+class ProductController
 {
 	public function register($request)
 	{
 		$params = $request->get_params();
-		$user = new User($params["name"],
-				 $params["last_name"],
-				 $params["email"],
-				 $params["birthdate"],
-				 $params["phone"],
-				 $params["password"]);
+		$product = new Product($params["name"],
+				 $params["value"],
+				 $params["category"],
+				 $params["amount"],
+				 $params["barcode"]);
 
 		$db = new DatabaseConnector("localhost", "oficina", "mysql", "", "root", "");
 
 		$conn = $db->getConnection();
 		
 		
-	    return $conn->query($this->generateInsertQuery($user));	
+	    return $conn->query($this->generateInsertQuery($product));	
 	}
 
-	private function generateInsertQuery($user)
+	private function generateInsertQuery($product)
 	{
-		$query =  "INSERT INTO user (name, last_name, email, birthdate, phone, pass) VALUES ('".$user->getName()."','".
-					$user->getLastName()."','".
-					$user->getEmail()."','".
-					$user->getBirthdate()."','".
-					$user->getPhone()."','". 
-					$user->getPassword()."')";
+		$query =  "INSERT INTO product (name, value, category, amount, barcode) VALUES ('".$product->getName()."','".
+					$product->getValue()."','".
+					$product->getCategory()."','".
+					$product->getAmount()."','". 
+					$product->getBarcode()."')";
 
 		return $query;						
 	}
@@ -41,11 +39,11 @@ class UserController
 		$params = $request->get_params();
 		$crit = $this->generateCriteria($params);
 
-		$db = new DatabaseConnector("localhost", "facebook", "mysql", "", "root", "");
+		$db = new DatabaseConnector("localhost", "oficina", "mysql", "", "root", "");
 
 		$conn = $db->getConnection();
 
-		$result = $conn->query("SELECT first_name, last_name, email, birthdate, phone FROM user WHERE ".$crit);
+		$result = $conn->query("SELECT * FROM product WHERE ".$crit);
 
 		//foreach($result as $row) 
 
@@ -73,7 +71,7 @@ class UserController
 		
 		$conn = $db->getConnection();
 		
-		$result = $conn->query("DELETE FROM user WHERE " .$cond);
+		$result = $conn->query("DELETE FROM product WHERE " .$cond);
 	}
 	
 	private function generateDelete($params)

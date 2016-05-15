@@ -50,11 +50,11 @@
 		}
 		
 		public function setCity($city){
-			this->city = $city;
+			$this->city = $city;
 		}
 		
 		public function setCnpj($cnpj){
-			this->cnpj = $cnpj
+			$this->cnpj = $cnpj;
 		}
 		
 		//GET
@@ -87,7 +87,7 @@
 			return $this->city;
 		}
 		
-		public fucntion getCnpj (){
+		public function getCnpj (){
 			return $this->cnpj;
 		}
 			

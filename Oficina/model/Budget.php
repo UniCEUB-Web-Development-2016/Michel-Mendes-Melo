@@ -52,7 +52,7 @@
 			return $this->licensePlate;
 		}
 
-		public function getSerive (){
+		public function getService (){
 			return $this->service;
 		}
 		
