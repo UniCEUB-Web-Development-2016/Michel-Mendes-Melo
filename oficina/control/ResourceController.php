@@ -16,7 +16,6 @@ class ResourceController
 
 	private $controlMap = 
 	[
-		"cebola" => "CebolaController",
 		"user" => "UserController",
 		"product" => "ProductController",
 		"client" => "ClientController",
